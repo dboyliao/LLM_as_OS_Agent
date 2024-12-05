@@ -1,0 +1,3 @@
+[submodule "letta"]
+	path = letta
+	url = git@github.com:letta-ai/letta.git
