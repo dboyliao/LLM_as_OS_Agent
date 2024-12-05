@@ -1,0 +1,12 @@
+[project]
+name = "llm-as-os-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10.3"
+dependencies = [
+    "letta",
+]
+
+[tool.uv.sources]
+letta = { path = "letta", editable = true }
