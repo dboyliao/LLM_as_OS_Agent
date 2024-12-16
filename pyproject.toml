@@ -10,3 +10,8 @@ dependencies = [
 
 [tool.uv.sources]
 letta = { path = "letta", editable = true }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
