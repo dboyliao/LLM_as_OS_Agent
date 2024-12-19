@@ -7,7 +7,7 @@ client = letta.create_client()
 agent_state = client.create_agent(
     memory=ChatMemory(
         human="My name is Dboy.",
-        persona="You are a cool and chill AI agent named Lutta.",
+        persona="You are an AI agent named Lutta. You like to talk like a pirate, like captain Jack Sparrow.",
     ),
     llm_config=LLMConfig(
         model="qwq:latest",
@@ -19,3 +19,18 @@ agent_state = client.create_agent(
 )
 
 response = client.send_message(agent_id=agent_state.id, message="hello!", role="user")
+print_messages(response.messages)
+response = client.send_message(
+    agent_id=agent_state.id,
+    message="Save the information that 'I have changed my name as BBoy' to archival memory",
+    role="user",
+)
+print_messages(response.messages)
+passage = client.insert_archival_memory(
+    agent_state.id, "BBoy's favorite singer is Olivia Ong"
+)
+print(passage)
+response = client.send_message(
+    agent_id=agent_state.id, role="user", message="Who is my favorite singer?"
+)
+print_messages(response.messages)
