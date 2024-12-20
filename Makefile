@@ -21,3 +21,12 @@ stop-letta:
 
 clear-letta:
 	@rm -rf letta-workspace/* ~/.letta/*
+
+start-open-webui:
+	docker run -d \
+	--network host \
+	-e PORT=8888 \
+	--gpus all \
+	-v $$HOME/open-webui:/app/backend/data \
+	--name open-webui \
+	--rm ghcr.io/open-webui/open-webui:cuda
