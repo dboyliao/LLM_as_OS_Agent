@@ -22,7 +22,7 @@ stop-letta:
 clear-letta:
 	@rm -rf letta-workspace/* ~/.letta/*
 
-start-open-webui:
+start-open-webui: start-ollama
 	docker run -d \
 	--network host \
 	-e PORT=8888 \
