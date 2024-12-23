@@ -1310,7 +1310,7 @@ wheels = [
 
 [[package]]
 name = "letta"
-version = "0.6.5"
+version = "0.6.6"
 source = { editable = "letta" }
 dependencies = [
     { name = "alembic" },
@@ -1640,6 +1640,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "letta" },
+    { name = "openai" },
 ]
 
 [package.dev-dependencies]
@@ -1648,7 +1649,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "letta", editable = "letta" }]
+requires-dist = [
+    { name = "letta", editable = "letta" },
+    { name = "openai", specifier = ">=1.58.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ipykernel", specifier = ">=6.29.5" }]
